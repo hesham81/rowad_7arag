@@ -5,12 +5,16 @@ class CustomTextButton extends StatefulWidget {
   final String text;
   final Function() onPressed;
   final Color? btnColor;
+  final double? fontSize;
+  final FontWeight? fontWeight;
 
   const CustomTextButton({
     super.key,
     required this.text,
     required this.onPressed,
     this.btnColor,
+    this.fontSize,
+    this.fontWeight,
   });
 
   @override
@@ -29,8 +33,8 @@ class _CustomTextButtonState extends State<CustomTextButton> {
         widget.text,
         style: TextStyle(
           color: widget.btnColor ?? AppColors.blueColor,
-          fontWeight: FontWeight.w600,
-          fontSize: 14,
+          fontWeight: widget.fontWeight ?? FontWeight.w600,
+          fontSize: widget.fontSize ?? 14,
         ),
       ),
     );

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:route_transitions/route_transitions.dart';
 import 'package:rowad_7arag/core/extensions/alignment.dart';
 import 'package:rowad_7arag/core/widget/custom_elevated_button.dart';
 import 'package:rowad_7arag/core/widget/custom_text_button.dart';
 import 'package:rowad_7arag/core/widget/custom_text_form_field.dart';
+import 'package:rowad_7arag/modules/sign_up/pages/sign_up.dart';
 import '/core/constant/app_assets.dart';
 import '/core/extensions/align.dart';
 import '/core/extensions/extensions.dart';
@@ -123,7 +125,10 @@ class SignIn extends StatelessWidget {
                 CustomTextButton(
                   text: "سجل الأن",
                   btnColor: AppColors.secondaryColor,
-                  onPressed: () {},
+                  onPressed: () => slideLeftWidget(
+                    newPage: SignUp(),
+                    context: context,
+                  ),
                 ),
                 0.01.width.vSpace,
                 Text(
