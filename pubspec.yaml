@@ -1,0 +1,76 @@
+name: rowad_7arag
+description: "This Is Rowad 7arag application"
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  route_transitions: ^2.0.1
+  flutter_svg: ^2.0.17
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/cairo/  # Ensure this line is present if not already
+
+
+
+  fonts:
+    - family: Lalezar
+      fonts:
+        - asset: assets/fonts/Lalezar/Lalezar-Regular.ttf
+
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Poppins/Poppins-BlackItalic.ttf
+          weight: 900
+          style: italic
+        # ... (other Poppins styles)
+
+    - family: ReemKufi
+      fonts:
+        - asset: assets/fonts/Reem_Kufi/static/ReemKufi-Regular.ttf
+        - asset: assets/fonts/Reem_Kufi/static/ReemKufi-Bold.ttf
+          weight: 700
+        # ... (other ReemKufi styles)
+
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto/static/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto/static/Roboto-Italic.ttf
+          style: italic
+        # ... (other Roboto styles)
+
+
+    - family: Cairo  # Add Cairo font family
+      fonts:
+        - asset: assets/fonts/cairo/Cairo-Regular.ttf
+        - asset: assets/fonts/cairo/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/cairo/Cairo-Light.ttf
+          weight: 300
+        - asset: assets/fonts/cairo/Cairo-Black.ttf
+          weight: 900
+        - asset: assets/fonts/cairo/Cairo-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/cairo/Cairo-SemiBold.ttf
+          weight: 600
