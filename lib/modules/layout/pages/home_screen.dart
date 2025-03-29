@@ -1,6 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rowad_7arag/modules/layout/widget/about.dart';
+import 'package:rowad_7arag/modules/layout/widget/reviews.dart';
+import 'package:rowad_7arag/modules/layout/widget/special_ads_widget.dart';
 import '/modules/layout/widget/categories.dart';
 import '/core/extensions/align.dart';
 import '/core/constant/app_assets.dart';
@@ -127,6 +130,46 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        backgroundColor: Color(0xff0AB28F),
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
+              color: Color(0xff7AD7C4),
+              size: 30,
+            ),
+            label: 'الصفحة الرئيسية',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person_outline,
+              size: 30,
+              color: Color(0xff7AD7C4),
+            ),
+            label: 'المفضلة',
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color(0xff0AB28F),
+        shape: CircleBorder(
+          side: BorderSide(
+            color: Color(0xffE3F1EE),
+            width: 3,
+          ),
+        ),
+        child: Icon(
+          Icons.add,
+          size: 35,
+          color: Color(0xff7AD7C4),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -284,21 +327,41 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             CarouselSlider(
-                items: ads.map((e) => Image.asset(e)).toList(),
-                options: CarouselOptions(
-                  initialPage: 0,
-                  height: 0.4.height,
-                  enableInfiniteScroll: true,
-                  reverse: false,
-                  autoPlay: true,
-                  autoPlayInterval: Duration(seconds: 3),
-                  autoPlayAnimationDuration: Duration(milliseconds: 800),
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                  enlargeCenterPage: true,
-                  enlargeFactor: 0.3,
-                  scrollDirection: Axis.horizontal,
-                )
-            )
+              items: ads.map((e) => Image.asset(e)).toList(),
+              options: CarouselOptions(
+                initialPage: 0,
+                height: 0.4.height,
+                enableInfiniteScroll: true,
+                reverse: false,
+                autoPlay: true,
+                autoPlayInterval: Duration(seconds: 3),
+                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                enlargeCenterPage: true,
+                enlargeFactor: 0.3,
+                scrollDirection: Axis.horizontal,
+              ),
+            ),
+            SpecialAdsWidget(
+              title: "إعلانات مميزة",
+            ).hPadding(0.03.width),
+            0.01.height.hSpace,
+            SpecialAdsWidget(
+              title: 'إعلانات ذوي الاحتياجات الخاصة',
+            ).hPadding(0.03.width),
+            0.01.height.hSpace,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: SvgPicture.asset(
+                "assets/images/click_here.svg",
+              ),
+            ).hPadding(0.03.width),
+            0.01.height.hSpace,
+            About().hPadding(0.03.width),
+            0.01.height.hSpace,
+            Reviews().hPadding(0.03.width),
+            0.01.height.hSpace,
+
           ],
         ),
       ),

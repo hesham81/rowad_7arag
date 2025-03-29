@@ -30,6 +30,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/adds/
+    - assets/images/products/
     - assets/images/categories/
     - assets/icons/
     - assets/fonts/cairo/  # Ensure this line is present if not already
