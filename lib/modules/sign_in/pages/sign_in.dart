@@ -5,6 +5,8 @@ import 'package:rowad_7arag/core/extensions/alignment.dart';
 import 'package:rowad_7arag/core/widget/custom_elevated_button.dart';
 import 'package:rowad_7arag/core/widget/custom_text_button.dart';
 import 'package:rowad_7arag/core/widget/custom_text_form_field.dart';
+import 'package:rowad_7arag/modules/forget_password/pages/forget_password.dart';
+import 'package:rowad_7arag/modules/layout/pages/home_screen.dart';
 import 'package:rowad_7arag/modules/sign_up/pages/sign_up.dart';
 import '/core/constant/app_assets.dart';
 import '/core/extensions/align.dart';
@@ -71,7 +73,10 @@ class SignIn extends StatelessWidget {
                       children: [
                         CustomTextButton(
                           text: " هل نسيت كلمة المرور ؟",
-                          onPressed: () {},
+                          onPressed: () => slideLeftWidget(
+                            newPage: ForgetPassword(),
+                            context: context,
+                          ),
                         ),
                         Spacer(),
                         Row(
@@ -108,7 +113,10 @@ class SignIn extends StatelessWidget {
                 vertical: 0.02.height,
               ),
               borderRadius: 50,
-              onPressed: () {},
+              onPressed: () => slideLeftWidget(
+                newPage: HomeScreen(),
+                context: context,
+              ),
               child: Text(
                 "تسجيل الدخول",
                 style: theme.textTheme.titleMedium!.copyWith(
@@ -118,7 +126,7 @@ class SignIn extends StatelessWidget {
                 ),
               ),
             ),
-            0.1.height.hSpace,
+            0.05.height.hSpace,
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
