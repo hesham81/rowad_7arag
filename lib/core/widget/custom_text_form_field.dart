@@ -14,6 +14,9 @@ class CustomTextFormField extends StatefulWidget {
   final int maxLine;
   final TextInputType keyboardType;
   final bool isReadOnly;
+  final bool isFilled;
+
+  final Color? fillColor;
 
   const CustomTextFormField({
     super.key,
@@ -26,7 +29,9 @@ class CustomTextFormField extends StatefulWidget {
     this.minLine = 1,
     this.maxLine = 1,
     this.keyboardType = TextInputType.text,
-     this.isReadOnly = false ,
+    this.isReadOnly = false,
+    this.isFilled = false,
+    this.fillColor,
   });
 
   @override
@@ -49,6 +54,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       controller: widget.controller,
       cursorColor: AppColors.secondaryColor,
       decoration: InputDecoration(
+        filled: widget.isFilled,
+        fillColor: widget.fillColor,
         suffixIcon: (widget.isPassword == false)
             ? (widget.suffixIcon == null)
                 ? null
