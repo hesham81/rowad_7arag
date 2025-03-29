@@ -1,9 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:rowad_7arag/modules/layout/widget/about.dart';
-import 'package:rowad_7arag/modules/layout/widget/reviews.dart';
-import 'package:rowad_7arag/modules/layout/widget/special_ads_widget.dart';
+import 'package:rowad_7arag/modules/layout/widget/rate_us.dart';
+import '/modules/layout/widget/about.dart';
+import '/modules/layout/widget/reviews.dart';
+import '/modules/layout/widget/special_ads_widget.dart';
 import '/modules/layout/widget/categories.dart';
 import '/core/extensions/align.dart';
 import '/core/constant/app_assets.dart';
@@ -361,6 +362,9 @@ class _HomeScreenState extends State<HomeScreen> {
             0.01.height.hSpace,
             Reviews().hPadding(0.03.width),
             0.01.height.hSpace,
+            RateUs().hPadding(0.03.width),
+            0.01.height.hSpace,
+
 
           ],
         ),
